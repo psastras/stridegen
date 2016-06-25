@@ -44,6 +44,7 @@
     "react-dom": "0.14.7",
     "react-inline-css": "2.1.0",
     "react-router": "2.0.0",
+    "react-router-transition": "0.0.5",
     "react-transmit": "3.1.7",
     "style-loader": "0.13.1"
   },

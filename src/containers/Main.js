@@ -5,13 +5,18 @@ import colors from "material-colors";
 import Doc from "components/Doc";
 import Nav from "components/Nav";
 
+import { RouteTransition } from 'react-router-transition';
+
+
+
 /**
  * Main React application entry-point for both the server and client.
  */
 export default class Main extends React.Component {
 	render() {
 		return (
-			<InlineCss stylesheet={ Main.css() } namespace="Main">
+
+			<InlineCss stylesheet={ Main.css() } namespace="Main"  key={this.props.routeParams.endpoint} >
 				<div className="container">
 					<div className="container-body">
 						<div className="container-fill-left" />
@@ -19,12 +24,14 @@ export default class Main extends React.Component {
 							<Nav {...this.props} />
 						</div>
 						<div className="container-content">
-							<Doc {...this.props} />
+							<Doc {...this.props}/>
 						</div>
 						<div className="container-fill-right" />
 					</div>
 				</div>
+
 			</InlineCss>
+
 		);
 	}
 
@@ -86,6 +93,7 @@ export default class Main extends React.Component {
 				flex: 1;
 				background: ${colors.grey['50']};
 			}
+
 		`);
 	}
 }

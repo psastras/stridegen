@@ -47,7 +47,15 @@ try {
 							<head>
 								<meta charset="utf-8" />
 								<title>stride</title>
-								<style>body { margin: 0; padding: 0 }</style>
+								<style>
+									body { margin: 0; padding: 0 } 
+								  .fade-appear { opacity: 0.01 }
+								  .fade-appear.fade-appear-active { opacity: 1; transition: opacity .25s ease-in }
+							    .fade-enter { opacity: 0.01 }
+								  .fade-enter.fade-enter-active { opacity: 1; transition: opacity 250ms ease-in }
+							    .fade-leave { opacity: 1 }
+									.fade-leave.fade-leave-active { opacity: 0.01; transition: opacity 150ms ease-in }
+							  </style>
 								<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 								<link rel="shortcut icon" href="${favicon}" />
 							</head>
