@@ -27,7 +27,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ec5dd2c81dacdbe5d6df"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2d9a63b3d6308c365bc3"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -666,7 +666,7 @@
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
-	var _favicon = __webpack_require__(23);
+	var _favicon = __webpack_require__(24);
 	
 	var _favicon2 = _interopRequireDefault(_favicon);
 	
@@ -873,7 +873,7 @@
 	
 	var _Doc2 = _interopRequireDefault(_Doc);
 	
-	var _Nav = __webpack_require__(22);
+	var _Nav = __webpack_require__(23);
 	
 	var _Nav2 = _interopRequireDefault(_Nav);
 	
@@ -925,7 +925,7 @@
 		}], [{
 			key: "css",
 			value: function css() {
-				return "\n\t\t\t& {\n\t\t\t\tfont-family: 'Open Sans', 'Helvetica', sans-serif;\n\t\t\t}\n\n\t\t\t& h1 {\n\t\t\t\tpadding: 0 0 0.25em;\n\t\t\t\tfont-weight: normal;\n\t\t\t\tmargin: 0;\n\t\t\t}\n\n\t\t\t& h2 {\n\t\t\t\tpadding: 0 0 0.5em;\n\t\t\t\tfont-weight: normal;\n\t\t\t\tmargin: 0;\n\t\t\t}\n\n\t\t\t& .container {\n\t\t\t\tdisplay: flex;\n\t\t\t\tmin-height: 100vh;\n\t\t\t\twidth: 100%;\n\t\t\t\tbackground: " + _materialColors2.default.grey['50'] + ";\n\t\t\t\tflex-direction: column;\n\t\t\t}\n\n\t\t\t& .container-body {\n\t\t\t\tdisplay: flex;\n\t\t\t\tflex: 1;\n\t\t\t}\n\n\t\t\t& .container-content {\n\t\t\t\tflex: 5;\n\t\t\t\tmax-width: 1000px;\n\t\t\t\tpadding: 1em 3em;\n\t\t\t}\n\n\t\t\t& .container-nav {\n\t\t\t\tflex: 0 0 20em;\n\t\t\t\torder -1;\n\t\t\t\tcolor: " + _materialColors2.default.grey['50'] + ";\n\t\t\t\tbackground: " + _materialColors2.default.grey['900'] + ";\n\t\t\t\tpadding: 1em 3em;\n\t\t\t}\n\n\t\t\t& .container-fill-left {\n\t\t\t\tflex: 1;\n\t\t\t\tbackground: " + _materialColors2.default.grey['900'] + ";\n\t\t\t}\n\n\t\t\t& .container-fill-right {\n\t\t\t\tflex: 1;\n\t\t\t\tbackground: " + _materialColors2.default.grey['50'] + ";\n\t\t\t}\n\n\t\t\t& code {\n\t\t\t\tfont-family: 'Consolas', 'Menlo', monospace;\n\t\t\t\tborder-radius: 0.5em;\n\t\t\t\tfont-size: 0.8em;\n\t\t\t\tpadding: 0.5em;\n\t\t\t\tborder: 1px solid " + _materialColors2.default.grey['200'] + ";\n\t\t\t}\n\n\t\t";
+				return "\n\t\t\t& {\n\t\t\t\tfont-family: 'Open Sans', 'Helvetica', sans-serif;\n\t\t\t}\n\n\t\t\t& h1 {\n\t\t\t\tpadding: 0 0 0.25em;\n\t\t\t\tfont-weight: normal;\n\t\t\t\tmargin: 0;\n\t\t\t}\n\n\t\t\t& h2 {\n\t\t\t\tpadding: 0 0 0.5em;\n\t\t\t\tfont-weight: normal;\n\t\t\t\tmargin: 0;\n\t\t\t}\n\n\t\t\t& h3 {\n\t\t\t\tpadding: 0 0 0.25em;\n\t\t\t\tfont-weight: normal;\n\t\t\t\tmargin: 0;\n\t\t\t}\n\n\t\t\t& .container {\n\t\t\t\tdisplay: flex;\n\t\t\t\tmin-height: 100vh;\n\t\t\t\twidth: 100%;\n\t\t\t\tbackground: " + _materialColors2.default.grey['50'] + ";\n\t\t\t\tflex-direction: column;\n\t\t\t}\n\n\t\t\t& .container-body {\n\t\t\t\tdisplay: flex;\n\t\t\t\tflex: 1;\n\t\t\t}\n\n\t\t\t& .container-content {\n\t\t\t\tflex: 5;\n\t\t\t\tmax-width: 1000px;\n\t\t\t\tpadding: 1em 3em;\n\t\t\t}\n\n\t\t\t& .container-nav {\n\t\t\t\tflex: 0 0 20em;\n\t\t\t\torder -1;\n\t\t\t\tcolor: " + _materialColors2.default.grey['50'] + ";\n\t\t\t\tbackground: " + _materialColors2.default.grey['900'] + ";\n\t\t\t\tpadding: 1em 3em;\n\t\t\t}\n\n\t\t\t& .container-fill-left {\n\t\t\t\tflex: 1;\n\t\t\t\tbackground: " + _materialColors2.default.grey['900'] + ";\n\t\t\t}\n\n\t\t\t& .container-fill-right {\n\t\t\t\tflex: 1;\n\t\t\t\tbackground: " + _materialColors2.default.grey['50'] + ";\n\t\t\t}\n\n\t\t\t& code {\n\t\t\t\tfont-family: 'Consolas', 'Menlo', monospace;\n\t\t\t\tborder-radius: 0.5em;\n\t\t\t\tfont-size: 0.8em;\n\t\t\t\tpadding: 0.5em;\n\t\t\t\tborder: 1px solid " + _materialColors2.default.grey['200'] + ";\n\t\t\t}\n\n\t\t";
 			}
 		}]);
 	
@@ -978,6 +978,10 @@
 	
 	var _reactHighlight2 = _interopRequireDefault(_reactHighlight);
 	
+	var _reactMarkdown = __webpack_require__(22);
+	
+	var _reactMarkdown2 = _interopRequireDefault(_reactMarkdown);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1028,6 +1032,8 @@
 	  _createClass(SwaggerDoc, [{
 	    key: "render",
 	    value: function render() {
+	      var _this3 = this;
+	
 	      return _react2.default.createElement(
 	        "div",
 	        null,
@@ -1036,6 +1042,9 @@
 	          null,
 	          _swagger2.default.getFullPath(this.props.path) || "Home"
 	        ),
+	        this.props.definition.getMethods().map(function (method) {
+	          return _react2.default.createElement(Method, { key: method, method: _this3.props.definition.getMethod(method) });
+	        }),
 	        _react2.default.createElement(
 	          _reactHighlight2.default,
 	          { className: "json" },
@@ -1066,12 +1075,47 @@
 	      return _react2.default.createElement(
 	        "h1",
 	        null,
-	        "Home"
+	        _swagger2.default.getTitle(),
+	        " Documentation"
 	      );
 	    }
 	  }]);
 	
 	  return NoDoc;
+	}(_react2.default.Component);
+	
+	var Method = function (_React$Component4) {
+	  _inherits(Method, _React$Component4);
+	
+	  function Method() {
+	    _classCallCheck(this, Method);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Method).apply(this, arguments));
+	  }
+	
+	  _createClass(Method, [{
+	    key: "render",
+	    value: function render() {
+	      console.log(this.props.method);
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "h2",
+	          { style: { textTransform: 'uppercase' } },
+	          this.props.method.method
+	        ),
+	        _react2.default.createElement(
+	          "h3",
+	          null,
+	          this.props.method.getSummary()
+	        ),
+	        _react2.default.createElement(_reactMarkdown2.default, { source: this.props.method.getDescription() })
+	      );
+	    }
+	  }]);
+	
+	  return Method;
 	}(_react2.default.Component);
 
 /***/ },
@@ -1107,7 +1151,24 @@
 	  return Object.keys(_swagger2.default.paths || {});
 	};
 	swagger.getPath = function (path) {
-	  return path && _swagger2.default.paths && _swagger2.default.paths[path] || {};
+	  var definition = path && _swagger2.default.paths && _swagger2.default.paths[path] || {};
+	  return {
+	    path: definition,
+	    getMethods: function getMethods() {
+	      return Object.keys(definition);
+	    },
+	    getMethod: function getMethod(method) {
+	      return {
+	        method: method,
+	        getSummary: function getSummary() {
+	          return definition[method].summary || "";
+	        },
+	        getDescription: function getDescription() {
+	          return definition[method].description || "";
+	        }
+	      };
+	    }
+	  };
 	};
 	swagger.getTitle = function () {
 	  return _swagger2.default.info && _swagger2.default.info.title || "API";
@@ -1510,6 +1571,12 @@
 
 /***/ },
 /* 22 */
+/***/ function(module, exports) {
+
+	module.exports = require("react-markdown");
+
+/***/ },
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1524,7 +1591,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _favicon = __webpack_require__(23);
+	var _favicon = __webpack_require__(24);
 	
 	var _favicon2 = _interopRequireDefault(_favicon);
 	
@@ -1636,7 +1703,7 @@
 	}(_react2.default.Component);
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "/favicon.ico";

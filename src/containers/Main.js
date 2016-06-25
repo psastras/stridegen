@@ -44,6 +44,12 @@ export default class Main extends React.Component {
 				margin: 0;
 			}
 
+			& h3 {
+				padding: 0 0 0.25em;
+				font-weight: normal;
+				margin: 0;
+			}
+
 			& .container {
 				display: flex;
 				min-height: 100vh;
