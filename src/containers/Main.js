@@ -5,17 +5,10 @@ import colors from "material-colors";
 import Doc from "components/Doc";
 import Nav from "components/Nav";
 
-import { RouteTransition } from 'react-router-transition';
-
-
-
-/**
- * Main React application entry-point for both the server and client.
- */
 export default class Main extends React.Component {
+
 	render() {
 		return (
-
 			<InlineCss stylesheet={ Main.css() } namespace="Main"  key={this.props.routeParams.endpoint} >
 				<div className="container">
 					<div className="container-body">
@@ -24,29 +17,23 @@ export default class Main extends React.Component {
 							<Nav {...this.props} />
 						</div>
 						<div className="container-content">
-							<Doc {...this.props}/>
+							<Doc className="container-content" {...this.props}/>
 						</div>
 						<div className="container-fill-right" />
 					</div>
 				</div>
-
 			</InlineCss>
-
 		);
 	}
 
 	static css() {
-		/**
-		 * <InlineCss> component allows you to write a CSS stylesheet for your component. Target
-		 * your component with `&` and its children with `& selectors`. Be specific.
-		 */
 		return (`
 			& {
 				font-family: 'Open Sans', 'Helvetica', sans-serif;
 			}
 
 			& h1 {
-				padding: 0 0 1em;
+				padding: 0 0 0.25em;
 				font-weight: normal;
 				margin: 0;
 			}
@@ -92,6 +79,14 @@ export default class Main extends React.Component {
 			& .container-fill-right {
 				flex: 1;
 				background: ${colors.grey['50']};
+			}
+
+			& code {
+				font-family: 'Consolas', 'Menlo', monospace;
+				border-radius: 0.5em;
+				font-size: 0.8em;
+				padding: 0.5em;
+				border: 1px solid ${colors.grey['200']};
 			}
 
 		`);
