@@ -39,6 +39,7 @@
     "koa": "1.2.0",
     "koa-proxy": "0.5.0",
     "koa-static": "2.0.0",
+    "material-colors": "1.0.0",
     "react": "0.14.7",
     "react-dom": "0.14.7",
     "react-inline-css": "2.1.0",

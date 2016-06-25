@@ -42,11 +42,13 @@ try {
 
 				Transmit.renderToString(Root, renderProps).then(({reactString, reactData}) => {
 					let template = (
-						`<!doctype html>
+					 `<!doctype html>
 						<html lang="en-us">
 							<head>
 								<meta charset="utf-8" />
 								<title>stride</title>
+								<style>body { margin: 0; padding: 0 }</style>
+								<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 								<link rel="shortcut icon" href="${favicon}" />
 							</head>
 							<body>

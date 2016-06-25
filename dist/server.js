@@ -27,7 +27,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "4d004aa5805842ab041a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e9b866e76b38bd3de323"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -666,7 +666,7 @@
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
-	var _favicon = __webpack_require__(15);
+	var _favicon = __webpack_require__(17);
 	
 	var _favicon2 = _interopRequireDefault(_favicon);
 	
@@ -717,7 +717,7 @@
 											var reactString = _ref.reactString;
 											var reactData = _ref.reactData;
 	
-											var template = "<!doctype html>\n\t\t\t\t\t\t<html lang=\"en-us\">\n\t\t\t\t\t\t\t<head>\n\t\t\t\t\t\t\t\t<meta charset=\"utf-8\" />\n\t\t\t\t\t\t\t\t<title>stride</title>\n\t\t\t\t\t\t\t\t<link rel=\"shortcut icon\" href=\"" + _favicon2.default + "\" />\n\t\t\t\t\t\t\t</head>\n\t\t\t\t\t\t\t<body>\n\t\t\t\t\t\t\t\t<div id=\"react-root\">" + reactString + "</div>\n\t\t\t\t\t\t\t</body>\n\t\t\t\t\t\t</html>";
+											var template = "<!doctype html>\n\t\t\t\t\t\t<html lang=\"en-us\">\n\t\t\t\t\t\t\t<head>\n\t\t\t\t\t\t\t\t<meta charset=\"utf-8\" />\n\t\t\t\t\t\t\t\t<title>stride</title>\n\t\t\t\t\t\t\t\t<style>body { margin: 0; padding: 0 }</style>\n\t\t\t\t\t\t\t\t<link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300\" rel=\"stylesheet\">\n\t\t\t\t\t\t\t\t<link rel=\"shortcut icon\" href=\"" + _favicon2.default + "\" />\n\t\t\t\t\t\t\t</head>\n\t\t\t\t\t\t\t<body>\n\t\t\t\t\t\t\t\t<div id=\"react-root\">" + reactString + "</div>\n\t\t\t\t\t\t\t</body>\n\t\t\t\t\t\t</html>";
 	
 											_this.type = "text/html";
 											_this.body = _reactTransmit2.default.injectIntoMarkup(template, reactData, [webserver + "/dist/client.js"]);
@@ -838,7 +838,8 @@
 	module.exports = _react2.default.createElement(
 		_reactRouter.Router,
 		null,
-		_react2.default.createElement(_reactRouter.Route, { path: "/", component: _Main2.default })
+		_react2.default.createElement(_reactRouter.Route, { path: "/docs/:endpoint", component: _Main2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: "*", component: _Main2.default })
 	);
 
 /***/ },
@@ -860,6 +861,18 @@
 	var _reactInlineCss = __webpack_require__(14);
 	
 	var _reactInlineCss2 = _interopRequireDefault(_reactInlineCss);
+	
+	var _materialColors = __webpack_require__(15);
+	
+	var _materialColors2 = _interopRequireDefault(_materialColors);
+	
+	var _Doc = __webpack_require__(16);
+	
+	var _Doc2 = _interopRequireDefault(_Doc);
+	
+	var _Nav = __webpack_require__(20);
+	
+	var _Nav2 = _interopRequireDefault(_Nav);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -889,9 +902,24 @@
 					_reactInlineCss2.default,
 					{ stylesheet: Main.css(), namespace: "Main" },
 					_react2.default.createElement(
-						"h1",
-						null,
-						"Hello World!"
+						"div",
+						{ className: "container" },
+						_react2.default.createElement(
+							"div",
+							{ className: "container-body" },
+							_react2.default.createElement("div", { className: "container-fill-left" }),
+							_react2.default.createElement(
+								"div",
+								{ className: "container-nav" },
+								_react2.default.createElement(_Nav2.default, this.props)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "container-content" },
+								_react2.default.createElement(_Doc2.default, this.props)
+							),
+							_react2.default.createElement("div", { className: "container-fill-right" })
+						)
 					)
 				);
 			}
@@ -902,7 +930,7 @@
 	    * <InlineCss> component allows you to write a CSS stylesheet for your component. Target
 	    * your component with `&` and its children with `& selectors`. Be specific.
 	    */
-				return "\n\t\t\t& {\n\t\t\t\tfont-family: sans-serif;\n\t\t\t\tcolor: #0df;\n\t\t\t\tpadding: 10px 30px 30px;\n\t\t\t\twidth: 443px;\n\t\t\t\tmargin: 10px auto;\n\t\t\t\tbackground: #222;\n\t\t\t}\n\t\t";
+				return "\n\t\t\t& {\n\t\t\t\tfont-family: 'Open Sans', 'Helvetica', sans-serif;\n\t\t\t}\n\n\t\t\t& h1 {\n\t\t\t\tpadding: 0 0 1em;\n\t\t\t\tfont-weight: normal;\n\t\t\t\tmargin: 0;\n\t\t\t}\n\n\t\t\t& h2 {\n\t\t\t\tpadding: 0 0 0.5em;\n\t\t\t\tfont-weight: normal;\n\t\t\t\tmargin: 0;\n\t\t\t}\n\n\t\t\t& .container {\n\t\t\t\tdisplay: flex;\n\t\t\t\tmin-height: 100vh;\n\t\t\t\twidth: 100%;\n\t\t\t\tbackground: " + _materialColors2.default.grey['50'] + ";\n\t\t\t\tflex-direction: column;\n\t\t\t}\n\n\t\t\t& .container-body {\n\t\t\t\tdisplay: flex;\n\t\t\t\tflex: 1;\n\t\t\t}\n\n\t\t\t& .container-content {\n\t\t\t\tflex: 5;\n\t\t\t\tmax-width: 1000px;\n\t\t\t\tpadding: 1em 3em;\n\t\t\t}\n\n\t\t\t& .container-nav {\n\t\t\t\tflex: 0 0 20em;\n\t\t\t\torder -1;\n\t\t\t\tcolor: " + _materialColors2.default.grey['50'] + ";\n\t\t\t\tbackground: " + _materialColors2.default.grey['900'] + ";\n\t\t\t\tpadding: 1em 3em;\n\t\t\t}\n\n\t\t\t& .container-fill-left {\n\t\t\t\tflex: 1;\n\t\t\t\tbackground: " + _materialColors2.default.grey['900'] + ";\n\t\t\t}\n\n\t\t\t& .container-fill-right {\n\t\t\t\tflex: 1;\n\t\t\t\tbackground: " + _materialColors2.default.grey['50'] + ";\n\t\t\t}\n\t\t";
 			}
 		}]);
 	
@@ -919,9 +947,180 @@
 
 /***/ },
 /* 15 */
+/***/ function(module, exports) {
+
+	module.exports = require("material-colors");
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(8);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * Main React application entry-point for both the server and client.
+	 */
+	
+	var Doc = function (_React$Component) {
+	  _inherits(Doc, _React$Component);
+	
+	  function Doc() {
+	    _classCallCheck(this, Doc);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Doc).apply(this, arguments));
+	  }
+	
+	  _createClass(Doc, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        null,
+	        _react2.default.createElement(
+	          "h1",
+	          null,
+	          this.props.routeParams.endpoint || "Home"
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a facilisis purus, nec dapibus purus. Maecenas tincidunt volutpat lectus, at sodales nisi eleifend eu. Nullam maximus non turpis in suscipit. Phasellus ac velit facilisis, suscipit odio quis, rutrum tellus. Fusce suscipit orci eu cursus commodo. Vivamus eget nunc et nisi scelerisque tempor. In eu eleifend justo. Pellentesque fringilla elementum lorem, non aliquet arcu accumsan non. Nulla facilisi. Duis suscipit pretium metus, vel eleifend massa consectetur accumsan. Nulla nec bibendum lectus, a aliquet odio. Aliquam ipsum neque, interdum eget convallis sed, lobortis et sem. Nulla nec mauris eu augue blandit elementum. In malesuada at magna a ullamcorper. Nullam pretium in dui vitae faucibus. Donec euismod lectus nulla, at iaculis ante commodo nec."
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "Fusce vel porta nulla. Proin a magna erat. Nulla tortor tellus, scelerisque ac enim a, varius luctus lacus. Sed pellentesque, ipsum vel imperdiet tempor, nisl nunc pulvinar odio, quis interdum ante risus a quam. Cras tristique libero purus, id fringilla enim venenatis et. Phasellus nec ex ut arcu interdum luctus. Proin id quam id turpis vehicula mollis et a est. Nam lacus felis, ultricies id sem eget, rhoncus aliquet massa."
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Doc;
+	}(_react2.default.Component);
+	
+	exports.default = Doc;
+
+/***/ },
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "/favicon.ico";
+
+/***/ },
+/* 18 */,
+/* 19 */,
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(8);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _favicon = __webpack_require__(17);
+	
+	var _favicon2 = _interopRequireDefault(_favicon);
+	
+	var _reactRouter = __webpack_require__(10);
+	
+	var _reactInlineCss = __webpack_require__(14);
+	
+	var _reactInlineCss2 = _interopRequireDefault(_reactInlineCss);
+	
+	var _materialColors = __webpack_require__(15);
+	
+	var _materialColors2 = _interopRequireDefault(_materialColors);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Nav = function (_React$Component) {
+	  _inherits(Nav, _React$Component);
+	
+	  function Nav() {
+	    _classCallCheck(this, Nav);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Nav).apply(this, arguments));
+	  }
+	
+	  _createClass(Nav, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _reactInlineCss2.default,
+	        { stylesheet: Nav.css(), namespace: "Nav" },
+	        _react2.default.createElement(
+	          "h1",
+	          null,
+	          _react2.default.createElement("img", { src: _favicon2.default, style: { verticalAlign: 'middle', paddingRight: '0.25em', height: '1.5em' } }),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: "/" },
+	            "Stride Docs"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "h2",
+	          null,
+	          "API"
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "nav-links" },
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: "/docs/foo%2Fbar" },
+	            "foo/bar"
+	          ),
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: "/docs/foo%2Fbar2" },
+	            "foo/bar2"
+	          )
+	        )
+	      );
+	    }
+	  }], [{
+	    key: "css",
+	    value: function css() {
+	      return "\n      & a {\n        color: " + _materialColors2.default.grey['50'] + ";\n        text-decoration: none; \n      }\n\n\t\t\t& .nav-links a {\n        display: block;\n        border-left: 1px solid " + _materialColors2.default.cyan['200'] + ";\n        padding: 0.25em 0em 0.25em 1em;\n        text-decoration: none;\n        word-wrap: break-word;\n        white-space: pre-wrap;\n        max-width: 20em;\n\t\t\t\tcolor: " + _materialColors2.default.cyan['200'] + ";\n\t\t\t}\n\n      & .nav-links a:hover {\n        border-left: 1px solid " + _materialColors2.default.grey['50'] + ";\n        color: " + _materialColors2.default.grey['50'] + ";\n      }\n\t\t";
+	    }
+	  }]);
+	
+	  return Nav;
+	}(_react2.default.Component);
+	
+	exports.default = Nav;
 
 /***/ }
 /******/ ]);

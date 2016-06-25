@@ -8,6 +8,7 @@ import Main from "./Main";
  */
 module.exports = (
 	<Router>
-		<Route path="/" component={Main} />
+		<Route path="/docs/:endpoint" component={Main} />
+		<Route path="*" component={Main} />
 	</Router>
 );
