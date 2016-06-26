@@ -1,0 +1,12 @@
+general:
+  branches:
+    only:
+      - master
+machine:
+  node:
+    version: 5.0.0   
+deployment:
+  pages:
+    tag: /example.*/
+    commands:
+      - ./ci/github_page.sh
