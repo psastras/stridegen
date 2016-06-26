@@ -1,7 +1,4 @@
 general:
-  branches:
-    only:
-      - master
   artifacts:
     - "dist/"
 machine:
@@ -9,5 +6,6 @@ machine:
     version: 5.0.0   
 deployment:
   pages:
+    branch: master
     commands:
       - ./ci/github_page.sh
