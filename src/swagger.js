@@ -1,15 +1,13 @@
-import api from "swagger.json";
-
-let swagger = api;
+import swagger from "./swagger.json";
 
 // Returns the basePath + path
 swagger.getFullPath = (path) => {
-  return path ? api.basePath + path : null;
+  return path ? swagger.basePath + path : null;
 }
 
-swagger.getPaths = () => Object.keys(api.paths || {});
+swagger.getPaths = () => Object.keys(swagger.paths || {});
 swagger.getPath = (path) =>  {
-  let definition = path && api.paths && api.paths[path] || {};
+  let definition = path && swagger.paths && swagger.paths[path] || {};
   return {
     path: definition,
     getMethods: () => Object.keys(definition),
@@ -22,8 +20,8 @@ swagger.getPath = (path) =>  {
     }
   };
 };
-swagger.getTitle = () => api.info && api.info.title || "API";
-swagger.getDescription = () => api.info && api.info.description || "";
-swagger.getVersion = () => api.info && api.info.version || "";
+swagger.getTitle = () => swagger.info && swagger.info.title || "API";
+swagger.getDescription = () => swagger.info && swagger.info.description || "";
+swagger.getVersion = () => swagger.info && swagger.info.version || "";
 
-export default api;
+export default swagger;
