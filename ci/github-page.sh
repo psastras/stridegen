@@ -6,5 +6,5 @@ cd public
 git config --global user.email "psastras@gmail.com"
 git config --global user.name $CIRCLE_PROJECT_USERNAME
 git add .
-git commit -m "public:ship: $CIRCLE_BUILD_NUM"
+git commit -m "public:ship: $CIRCLE_BUILD_NUM" --allow-empty
 git push --force origin gh-pages
