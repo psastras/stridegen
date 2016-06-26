@@ -26,6 +26,7 @@ class SwaggerDoc extends React.Component {
       <div>
         <h1>{this.props.api.getFullPath(this.props.path) || "Home"}</h1>
          {this.props.definition.getMethods().map(method => <Method api={this.props.api} key={method} path={this.props.path} method={this.props.definition.getMethod(method)} />)}
+         <h2>Raw Swagger Definition</h2>
          <Highlight className='json'>{jsonFormat(this.props.definition, {  type: 'space', size: 2})}</Highlight>
       </div>
     )
