@@ -1,9 +1,8 @@
 general:
   branches:
-    ignore:
-      - gh-pages # list of branches to ignore
-  artifacts:
-    - "dist/"
+    only:
+      - master # list of branches to build
+      - /feature-.*/ # or regexes
 machine:
   node:
     version: 5.0.0   
