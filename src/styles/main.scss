@@ -1,7 +1,9 @@
-$OpenSansPath: "../../node_modules/open-sans-fontface/fonts";
-@import "../../node_modules/open-sans-fontface/open-sans.scss";
-@import "../../node_modules/highlight.js/styles/color-brewer.css";
-@import "../../node_modules/material-colors/dist/colors.scss";
+$OpenSansPath: "~open-sans-fontface/fonts";
+@import "~open-sans-fontface/sass/variables";
+@import "~open-sans-fontface/sass/mixins";
+@import "~open-sans-fontface/sass/Regular";
+@import "~highlight.js/styles/color-brewer.css";
+@import "~material-colors/dist/colors.scss";
 
 body, html {
   font-family: 'Open Sans', 'Helvetica', sans-serif;
