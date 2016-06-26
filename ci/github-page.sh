@@ -7,5 +7,5 @@ cd public
 git config --global user.email "psastras@gmail.com"
 git config --global user.name $CIRCLE_PROJECT_USERNAME
 git add .
-git commit -m "publi:ship: $CIRCLE_BUILD_NUM"
-git push origin gh-pages
+git commit -m "public:ship: $CIRCLE_BUILD_NUM"
+git push --force origin gh-pages
