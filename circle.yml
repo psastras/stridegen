@@ -2,8 +2,8 @@ general:
   branches:
     only:
       - master
-   artifacts:
-      - "dist/"
+  artifacts:
+    - "dist/"
 machine:
   node:
     version: 5.0.0   
