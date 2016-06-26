@@ -5,6 +5,8 @@
   "scripts": {
     "start": "node server.js",
     "build": "cross-env NODE_ENV=production webpack -p --progress --config webpack.config.js",
+    "postinstall": "npm run build",
+    "test": "node_modules/.bin/mocha --reporter mocha-circleci-reporter test/*.js",
     "lint": "eslint src"
   },
   "bin": { "stridegen": "./stridegen.sh" },
@@ -15,12 +17,11 @@
   "keywords": [
     "react",
     "reactjs",
-    "boilerplate",
-    "hot",
-    "reload",
-    "hmr",
-    "live",
-    "edit",
+    "swagger",
+    "swagger-ui",
+    "api",
+    "documentation",
+    "openapi",
     "webpack"
   ],
   "author": "Paul Sastrasinh (http://github.com/psastras)",
@@ -63,5 +64,10 @@
     "react-markdown": "2.3.0",
     "react-router": "2.0.0",
     "shelljs": "0.7.0"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "2.5.3",
+    "mocha-circleci-reporter": "0.0.1"
   }
 }
