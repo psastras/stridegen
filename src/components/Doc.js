@@ -12,7 +12,9 @@ export default class Doc extends React.Component {
     let pathDefinition = this.props.api.getPath(this.props.endpoint);
     return (
       <ReactCSSTransitionGroup transitionName="fade" transitionEnterTimeout={250} transitionLeaveTimeout={150} transitionAppearTimeout={150} transitionAppear={true}>
-        {this.props.api.getFullPath(this.props.endpoint) ? <SwaggerDoc api={this.props.api} path={this.props.endpoint} definition={pathDefinition} /> : <NoDoc api={this.props.api} />}
+        {this.props.api.getFullPath(this.props.endpoint) ? 
+          <SwaggerDoc api={this.props.api} path={this.props.endpoint} key={this.props.endpoint} definition={pathDefinition} /> : 
+          <NoDoc api={this.props.api} />}
       </ReactCSSTransitionGroup>
     );
   }
