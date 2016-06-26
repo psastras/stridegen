@@ -50,7 +50,7 @@ module.exports = {
     alias: {
       'react': 'react-lite',
       'react-dom': 'react-lite',
-      'swagger.json':  path.join(__dirname, 'src/petstore.json')
+      'swagger.json':  path.join(__dirname, 'src/watson.json')
     },
     extensions: ['', '.js', '.jsx', 'json']
   }

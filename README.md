@@ -8,6 +8,8 @@ Stridegen will, given an input Swagger 2.x definition output a static web page.
 
 Stridegen is written in [React](https://facebook.github.io/react/) + [Sass](http://sass-lang.com/), and uses Webpack to build and output HTML.
 
+[See the live example](https://psastras.github.io/stridegen/), automatically built from the master branch.
+
 ## Installation
 
 Currently, Stridegen will only run on OSX / Linux environments.  It can be run on Windows machines as well, however at this time
