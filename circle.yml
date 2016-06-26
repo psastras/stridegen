@@ -4,9 +4,6 @@ general:
       - gh-pages # list of branches to ignore
   artifacts:
     - "dist/"
-machine:
-  node:
-    version: 5.0.0   
 deployment:
   pages:
     branch: master
