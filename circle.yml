@@ -8,4 +8,5 @@ deployment:
   pages:
     branch: master
     commands:
+      - ls
       - ./ci/github_page.sh
