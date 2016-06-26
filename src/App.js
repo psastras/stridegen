@@ -1,24 +1,30 @@
 import React from "react";
 import styles from "./styles/main.scss";
-import Doc from "./components/Doc";
-import Nav from "./components/Nav";
+import ReactSwagger from "./components/react-swagger";
+import JsonRefs from "json-refs";
+import api from "./swagger";
 
 export default class App extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {};
+  }
+
+  componentDidMount() {
+    JsonRefs.resolveRefs(api)
+      .then((res) => {
+        this.setState({ api: res.resolved })
+      }, (err) => {
+        console.error(err);
+      });
+  }
+
   render() {
     return (
-      <div className="container">
-        <div className="container-body">
-          <div className="container-fill-left" />
-          <div className="container-nav">
-            <Nav {...this.props} />
-          </div>
-          <div className="container-content">
-            <Doc className="container-content" {...this.props}/>
-          </div>
-          <div className="container-fill-right" />
-        </div>
-      </div>
+      this.state.api ?
+        <ReactSwagger endpoint={ this.props.params.endpoint } api={ this.state.api } /> :
+        <div />
     );
   }
 }

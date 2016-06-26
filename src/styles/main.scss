@@ -9,21 +9,21 @@ body, html {
 }
 
 h1 {
-  padding: 0 0 0.25em;
+  padding: 0 0 0.5em;
   font-weight: normal;
-  margin: 0;
+  margin: 0 0 0.5em;
 }
 
 h2 {
-  padding: 0 0 0.5em;
+  padding: 1em 0em 0em;
   font-weight: normal;
-  margin: 0;
+  margin: 0em;
 }
 
 h3 {
-  padding: 0 0 0.25em;
+  padding: 1em 0 0em;
   font-weight: normal;
-  margin: 0;
+  margin: 0em;
 }
 
 a {
@@ -55,6 +55,19 @@ a:hover {
   flex: 5;
   max-width: 1000px;
   padding: 1em 3em;
+
+  h1 {
+    color: $md-grey-900;
+    border-bottom: 1px solid $md-grey-900;
+  }
+
+  h2 {
+    color: $md-cyan-400;
+  }
+
+  h3 {
+    color: $md-grey-700; 
+  }
 }
 
 .container-nav {
@@ -78,8 +91,15 @@ code {
   font-family: 'Consolas', 'Menlo', monospace;
   border-radius: 0.5em;
   font-size: 0.8em;
-  padding: 0.5em;
+  padding: 0.25em;
   border: 1px solid $md-grey-200;
+}
+
+pre {
+  font-family: 'Consolas', 'Menlo', monospace;
+  padding: 0em;
+  margin: 0.5em 0em;
+  color: $md-grey-600;
 }
 
 .nav a {
@@ -94,7 +114,7 @@ code {
   text-decoration: none;
   word-wrap: break-word;
   white-space: pre-wrap;
-  max-width: 20em;
+  max-width: 30em;
   color: $md-cyan-200;
 }
 
@@ -104,13 +124,66 @@ code {
   padding: 0.25em 0em 0.25em 1em;
   word-wrap: break-word;
   white-space: pre-wrap;
-  max-width: 20em;
+  max-width: 30em;
   color: $md-cyan-50;
 }
 
 .nav-links a:hover {
   border-left: 1px solid $md-grey-50;
   color: $md-grey-50;
+}
+
+.method {
+  padding-bottom: 2em;
+  border-bottom: 1px solid $md-grey-900;
+}
+
+.method-header {
+  padding-bottom: 0.25em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid $md-grey-300;
+}
+
+table {
+  padding: 0em;
+  margin: 1em 0em;
+  width: 100%;
+  border-style: hidden;
+  border-top: 1px solid $md-grey-300;
+  border-bottom: 1px solid $md-grey-300;
+  border-collapse: collapse;
+  color: $md-grey-600;
+}
+
+tr {
+  margin: 0em;
+  border: 1px solid $md-grey-300;
+}
+
+td {
+  padding: 1em 1em;
+  margin: 0em;
+  font-size: 0.9em;
+  vertical-align: top;
+  min-width: 10em;
+
+  &:first-child {
+    padding: 1em 0em;
+  }
+
+  &:empty {
+    visibility: hidden;
+  }
+
+  p:first-child {
+    padding-top: 0em;
+    margin-top: 0em;
+  }
+
+  p:last-child {
+    padding-bottom: 0em;
+    margin-bottom: 0em;
+  }
 }
 
 .fade-appear { opacity: 0.01 }
