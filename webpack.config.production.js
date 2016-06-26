@@ -9,7 +9,7 @@ module.exports = {
     './src/index'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: process.env.OUTPUT_DIR || path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   plugins: [
@@ -49,7 +49,9 @@ module.exports = {
   resolve: {
     alias: {
       'react': 'react-lite',
-      'react-dom': 'react-lite'
-    }
+      'react-dom': 'react-lite',
+      'swagger.json':  path.join(__dirname, 'src/petstore.json')
+    },
+    extensions: ['', '.js', '.jsx', 'json']
   }
 };

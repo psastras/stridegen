@@ -29,5 +29,11 @@ module.exports = {
       { test: /\.scss$/, loaders: ["style", "css", "sass"] },
       { test: /\.(ico|gif|png|jpg|jpeg|svg|webp|eot|woff|woff2|ttf).*/, loaders: ["file"] }
     ]
+  },
+  resolve: {
+    alias: {
+      'swagger.json':  path.join(__dirname, 'src/watson.json')
+    },
+    extensions: ['', '.js', '.jsx', 'json']
   }
 };

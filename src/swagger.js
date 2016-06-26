@@ -1,4 +1,4 @@
-import swagger from "./swagger.json";
+import swagger from "swagger.json";
 
 // Returns the basePath + path
 swagger.getFullPath = (path) => { return path ? swagger.basePath + path : null; }
