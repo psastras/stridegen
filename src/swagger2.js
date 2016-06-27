@@ -98,9 +98,9 @@ class Operation {
     this.summary = json.summary || "";
     this.description = json.description || "";
     this.operationId = json.operationId || "";
-    this.consumes = json.consumes || pathItem.paths.swagger.consumes || {};
-    this.produces = json.produces || pathItem.paths.swagger.produces || {};
-    this.parameters = json.parameters || pathItem.parameters || {};
+    this.consumes = json.consumes || pathItem.paths.swagger.consumes || [];
+    this.produces = json.produces || pathItem.paths.swagger.produces || [];
+    this.parameters = json.parameters || pathItem.parameters || [];
     this.responses = new Responses(json.responses);
     this.schemes = json.schemes || pathItem.paths.swagger.schemes;
     this.deprecated = json.deprecated || false;
