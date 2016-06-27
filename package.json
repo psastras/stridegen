@@ -1,6 +1,6 @@
 {
   "name": "stridegen",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Swagger documentation generation.",
   "scripts": {
     "start": "node server.js",
