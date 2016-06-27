@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   devtool: 'cheap-source-map',
@@ -35,7 +36,15 @@ module.exports = {
         NODE_ENV: JSON.stringify('production')
       }
     }),
-    new ExtractTextPlugin("app.css")
+    new ExtractTextPlugin("app.css"),
+    new OptimizeCssAssetsPlugin({
+      cssProcessor: require('cssnano'),
+      cssProcessorOptions: { 
+        discardComments: { removeAll: true },
+        discardDuplicates: { removeAll: true }
+      },
+      canPrint: true
+    })
   ],
   module: {
     loaders: [
