@@ -6,7 +6,7 @@
     "start": "node server.js",
     "build": "cross-env NODE_ENV=production webpack -p --progress --config webpack.config.js",
     "postinstall": "npm run build",
-    "test": "node_modules/.bin/mocha --reporter mocha-circleci-reporter test/*.js",
+    "test": "node_modules/.bin/mocha --compilers js:babel-core/register --reporter mocha-circleci-reporter test/*.js",
     "lint": "eslint src"
   },
   "bin": { "stridegen": "./stridegen.sh" },

@@ -1,6 +1,6 @@
 import swagger from "swagger.json";
 
-// Returns the basePath + path
+// todo: dejankify this
 swagger.getFullPath = (path) => { return path ? swagger.basePath + path : null; }
 swagger.getFullUrl = (path) => {
   let fullPath = path ? swagger.basePath + path : "";
