@@ -100,8 +100,7 @@ read -r -d '' __usage <<-'EOF' || true # exits non-zero when EOF encountered
 EOF
 read -r -d '' __helptext <<-'EOF' || true # exits non-zero when EOF encountered
  This is Bash3 Boilerplate's help text. Feel free to add any description of your
- program or elaborate more on command-line arguments. This section is not
- parsed and will be added as-is to the help.
+ program or elaborate more on command-line arguments.
 EOF
 
 # Translate usage string -> getopts arguments, and set $arg_<flag> defaults
