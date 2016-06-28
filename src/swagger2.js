@@ -52,6 +52,13 @@ class Paths {
     this.pathItems = Object.keys(json).map(pathName => new PathItem(this, pathName, json[pathName] || {}));
     this.numPathItems = this.pathItems.length;
   }
+
+  /** 
+   * @return {PathItem[]} Returns a list of path items, each of which describes operations available on a single path.
+   */
+  getPathItems() {
+    return this.pathItems;
+  }
 }
 
 /**
@@ -66,6 +73,13 @@ class PathItem {
     
     this.operations = Object.keys(json).map(operationType => new Operation(this, operationType, json[operationType] || {}));
     this.numOperations = this.operations.length;
+  }
+
+  /**
+   * @return {Parameter[]} A list of available parameters to this path (query, header, request, etc.).
+   */
+  getParameters() {
+    return this.parameters;
   }
 
   /**
