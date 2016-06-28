@@ -15,10 +15,17 @@ class Swagger2 {
   }
 
   /**
-   * Returns the first defined scheme.
+   * @return {string} The first scheme which has been defined. 
    */
   getDefaultScheme() {
     return this.schemes[0];
+  }
+
+  /**
+   * @return {Paths} A Paths object containing a list of all paths.
+   */
+  getPaths() {
+    return this.paths;
   }
 }
 
@@ -42,7 +49,6 @@ class Info {
 class Paths {
   constructor(swagger, json) {
     this.swagger = swagger;
-
     this.pathItems = Object.keys(json).map(pathName => new PathItem(this, pathName, json[pathName] || {}));
     this.numPathItems = this.pathItems.length;
   }
@@ -62,8 +68,8 @@ class PathItem {
     this.numOperations = this.operations.length;
   }
 
-  /** 
-   * Returns the path of the url, ie. basePath + this.path. 
+  /**
+   * @return {string} The path of the url, ie. basePath + this.path. 
    */
   getPath() {
     return `${this.paths.swagger.basePath}${this.name}`;
@@ -72,6 +78,8 @@ class PathItem {
   /**
    * Returns the full path, ie host + basePath + this.path.  Note that this does not include the scheme.
    * See getFullUrl() which includes the scheme.
+   * 
+   * @return {string} the full path, ie host + basePath + this.path.
    */
   getFullPath() {
     return `${this.paths.swagger.host}${this.paths.swagger.basePath}${this.name}`;
@@ -105,6 +113,13 @@ class Operation {
     this.schemes = json.schemes || pathItem.paths.swagger.schemes;
     this.deprecated = json.deprecated || false;
     this.security = new SecurityRequirement(json.security || {});
+  }
+
+  /**
+   * Returns the list of possible responses
+   */
+  getResponses() {
+    return this.responses.responses;
   }
 
   /**
@@ -177,7 +192,76 @@ class Item {
 
 class Responses {
   constructor(json) {
+    this.responses = Object.keys(json).map(status => new Response(status, json[status]));
+  }
+}
 
+class Response {
+  constructor(status, json) {
+    this.status = status;
+    this.description = json.description || "";
+    this.schema = json.schema;
+    this.headers = new Headers(json.headers || {});
+    this.examples = new Examples(json.examples || {});
+  }
+
+  /**
+   * Returns the list of acceptable headers.
+   */
+  getHeaders() {
+    return this.headers.headers;
+  }
+
+  /**
+   * Returns a list of example responses.
+   */
+  getExamples() {
+    return this.examples.examples;
+  }
+}
+
+class Headers {
+  constructor(json) {
+    this.headers = Object.keys(json).map(headerName => new Header(headerName, json[headerName]));
+    this.numHeaders = this.headers.length;
+  }
+}
+
+class Header {
+  constructor(headerName, json) {
+    this.name = headerName;
+    this.description = json.description || "";
+    this.type = json.type || "";
+    this.format = json.format || "";
+    this.items = (json.items || []).map(item => new Item(item));
+    this.collectionFormat = (this.items && this.items.length > 0) ? (json.collectionFormat || "csv") : "";
+    this.default = "";
+    this.maximum = json.maximum;
+    this.exclusiveMaximum = json.exclusiveMaximum;
+    this.minimum = json.minimum;
+    this.exclusiveMinimum = json.exclusiveMinimum;
+    this.maxLength = json.maxLength;
+    this.minLength = json.minLength;
+    this.pattern = json.pattern || "";
+    this.maxItems = json.maxItems;
+    this.minItems = json.minItems;
+    this.uniqueItems = json.uniqueItems;
+    this.enum = json.enum || [];
+    this.multipleOf = json.multipleOf;
+  }
+}
+
+class Examples {
+  constructor(json) {
+    this.examples = Object.keys(json).map(mimeType => new Example(mimeType, json[mimeType]));
+    this.numExamples = this.examples.length;
+  }
+}
+
+class Example {
+  constructor(mimeType, json) {
+    this.mimeType = mimeType;
+    this.json = json;
   }
 }
 
