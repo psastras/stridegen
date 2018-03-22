@@ -9,7 +9,9 @@
     "test": "node_modules/.bin/mocha --compilers js:babel-core/register --reporter mocha-circleci-reporter test/*.js",
     "lint": "eslint src"
   },
-  "bin": { "stridegen": "./stridegen.sh" },
+  "bin": {
+    "stridegen": "./stridegen.sh"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/psastras/stridegen.git"
@@ -40,7 +42,7 @@
     "cross-env": "1.0.8",
     "css-loader": "0.23.1",
     "cssnano": "3.7.1",
-    "eslint": "^1.10.3",
+    "eslint": "^4.18.2",
     "eslint-plugin-react": "^3.6.2",
     "extract-text-webpack-plugin": "1.0.1",
     "file-loader": "0.9.0",
