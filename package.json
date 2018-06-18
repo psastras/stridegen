@@ -7,9 +7,13 @@
     "build": "cross-env NODE_ENV=production webpack -p --progress --config webpack.config.js",
     "postinstall": "npm run build",
     "test": "node_modules/.bin/mocha --compilers js:babel-core/register --reporter mocha-circleci-reporter test/*.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
-  "bin": { "stridegen": "./stridegen.sh" },
+  "bin": {
+    "stridegen": "./stridegen.sh"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/psastras/stridegen.git"
@@ -66,11 +70,13 @@
     "react-lite": "0.15.14",
     "react-markdown": "2.3.0",
     "react-router": "2.0.0",
-    "shelljs": "0.7.0"
+    "shelljs": "0.7.0",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "chai": "3.5.0",
     "mocha": "2.5.3",
     "mocha-circleci-reporter": "0.0.1"
-  }
+  },
+  "snyk": true
 }
