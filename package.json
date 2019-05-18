@@ -53,7 +53,7 @@
     "sass-loader": "3.2.1",
     "style-loader": "0.13.1",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1",
+    "webpack-dev-server": "^2.2.0",
     "json-format": "0.1.2",
     "material-colors": "1.0.0",
     "open-sans-fontface": "1.4.0",
